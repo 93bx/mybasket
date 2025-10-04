@@ -1,10 +1,11 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import {useLocale} from 'next-intl';
+import {useLocale, useTranslations} from 'next-intl';
 import {usePathname} from '@/i18n/routing';
 
 export default function Navbar(){
+  const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();
   const switchTo = locale === 'ar' ? 'en' : 'ar';
@@ -19,9 +20,9 @@ export default function Navbar(){
             <Image src="/logo.png" alt="mybasket" width={140} height={32} />
           </Link>
           <div className="flex items-center gap-6 text-sm font-medium">
-            <Link href={`/${locale}/store`} className="hover:underline">Products</Link>
-            <Link href={`/${locale}/suppliers`} className="hover:underline">Suppliers</Link>
-            <Link href={`/${locale}/contact`} className="hover:underline">Contact</Link>
+            <Link href={`/${locale}/store`} className="hover:underline">{t('nav.products')}</Link>
+            <Link href={`/${locale}/suppliers`} className="hover:underline">{t('nav.suppliers')}</Link>
+            <Link href={`/${locale}/contact`} className="hover:underline">{t('nav.contact')}</Link>
             <Link href={switchHref} className="px-3 py-1.5 rounded-lg bg-[#155263] text-white">
               {switchTo.toUpperCase()}
             </Link>

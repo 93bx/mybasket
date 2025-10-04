@@ -12,9 +12,10 @@ const PRODUCTS = Array.from({length: 42}).map((_, i) => ({
   image: '/vercel.svg'
 }));
 
-export default function ProductPage({params}:{params:{id:string}}){
+export default async function ProductPage({params}:{params:Promise<{id:string}>}){
   const t = useTranslations();
-  const product = PRODUCTS.find(p=>p.id === params.id);
+  const {id} = await params;
+  const product = PRODUCTS.find(p=>p.id === id);
   if(!product) return notFound();
   return (
     <div className="container mx-auto px-4">

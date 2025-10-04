@@ -1,9 +1,11 @@
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
+import {useLocale} from 'next-intl';
 
 export default function HomePage() {
   const t = useTranslations();
+  const locale = useLocale();
   return (
     <div className="container mx-auto px-4">
       <section className="text-center md:text-left grid md:grid-cols-2 gap-8 items-center">
@@ -11,10 +13,10 @@ export default function HomePage() {
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">{t('hero.title')}</h1>
           <p className="text-lg opacity-80 mb-6">{t('hero.subtitle')}</p>
           <div className="flex gap-3 justify-center md:justify-start">
-            <Link href="/en/store" className="px-5 py-3 rounded-lg bg-[#155263] text-white hover:opacity-95 transition">
+            <Link href={`/${locale}/store`} className="px-5 py-3 rounded-lg bg-[#155263] text-white hover:opacity-95 transition">
               {t('cta.browse')}
             </Link>
-            <Link href="/en/suppliers" className="px-5 py-3 rounded-lg border border-[#155263] text-[#155263] bg-white/40 backdrop-blur hover:bg-white/60 transition">
+            <Link href={`/${locale}/suppliers`} className="px-5 py-3 rounded-lg border border-[#155263] text-[#155263] bg-white/40 backdrop-blur hover:bg-white/60 transition">
               {t('cta.becomeSupplier')}
             </Link>
           </div>
@@ -39,6 +41,18 @@ export default function HomePage() {
           <Stat value="150+" label={t('stats.suppliers')} />
           <Stat value="5k+" label={t('stats.skus')} />
           <Stat value="20+" label={t('stats.cities')} />
+        </div>
+      </section>
+
+      <section className="mt-16">
+        <h2 className="text-2xl font-bold mb-6">{t('testimonials.title')}</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[1,2,3].map(i => (
+            <div key={i} className="p-6 rounded-xl bg-white/60 backdrop-blur border border-white/40 shadow-sm">
+              <p className="italic">“Great partner with smooth logistics.”</p>
+              <div className="mt-3 text-sm opacity-80">— Partner {i}</div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

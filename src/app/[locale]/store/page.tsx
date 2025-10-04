@@ -20,6 +20,7 @@ export default function StorePage(){
   const [q, setQ] = useState('');
   const [brand, setBrand] = useState('');
   const [category, setCategory] = useState('');
+  const [maxPrice, setMaxPrice] = useState<number | ''>('');
   const [page, setPage] = useState(1);
   const pageSize = 12;
 
@@ -29,7 +30,8 @@ export default function StorePage(){
   const filtered = PRODUCTS.filter(p =>
     (!q || p.name.toLowerCase().includes(q.toLowerCase())) &&
     (!brand || p.brand === brand) &&
-    (!category || p.category === category)
+    (!category || p.category === category) &&
+    (!maxPrice || p.price <= Number(maxPrice))
   );
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
@@ -38,7 +40,7 @@ export default function StorePage(){
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-3xl font-bold mb-6">{t('store.title')}</h1>
-      <div className="grid md:grid-cols-4 gap-4 mb-6">
+      <div className="grid md:grid-cols-5 gap-4 mb-6">
         <input value={q} onChange={e=>{setQ(e.target.value); setPage(1);}} placeholder={t('store.search')} className="md:col-span-2 px-4 py-2 rounded-lg bg-white/70 border border-white/50" />
         <select value={category} onChange={e=>{setCategory(e.target.value); setPage(1);}} className="px-4 py-2 rounded-lg bg-white/70 border border-white/50">
           <option value="">{t('store.category')}</option>
@@ -48,6 +50,7 @@ export default function StorePage(){
           <option value="">{t('store.brand')}</option>
           {brands.map(b=> <option key={b} value={b}>{b}</option>)}
         </select>
+        <input value={maxPrice as any} onChange={e=>{setMaxPrice(e.target.value? Number(e.target.value): ''); setPage(1);}} type="number" placeholder={t('store.price')} className="px-4 py-2 rounded-lg bg-white/70 border border-white/50" />
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

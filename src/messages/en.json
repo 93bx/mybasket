@@ -1,45 +1,71 @@
 {
-  "brand.name": "mybasket",
-  "nav.products": "Products",
-  "nav.suppliers": "Suppliers",
-  "nav.contact": "Contact",
-  "cta.browse": "Browse Products",
-  "cta.becomeSupplier": "Become a Supplier",
-  "hero.title": "Your B2B partner for wholesale and retail supply",
-  "hero.subtitle": "Discover curated suppliers and products with transparent MOQ and packaging details.",
-  "how.title": "How it works",
-  "how.step1": "Browse the catalog and shortlist products",
-  "how.step2": "Send an inquiry for pricing & MOQ",
-  "how.step3": "We coordinate fulfillment and logistics",
-  "stats.title": "Our numbers",
-  "stats.suppliers": "+ Suppliers",
-  "stats.skus": "+ SKUs",
-  "stats.cities": "+ Cities served",
-  "testimonials.title": "Trusted by partners",
-  "footer.quickLinks": "Quick Links",
-  "footer.legal": "Legal",
-  "footer.language": "Language",
-  "store.title": "Catalog",
-  "store.search": "Search products",
-  "store.category": "Category",
-  "store.brand": "Brand",
-  "store.price": "Price",
-  "store.reset": "Reset",
-  "store.loadMore": "Load more",
-  "product.moq": "MOQ",
-  "product.packaging": "Packaging",
-  "product.inquire": "Request Pricing",
-  "suppliers.title": "Become a Supplier",
-  "suppliers.subtitle": "Join our network and reach thousands of retail buyers.",
-  "form.name": "Name",
-  "form.company": "Company",
-  "form.email": "Email",
-  "form.phone": "Phone",
-  "form.category": "Category",
-  "form.message": "Message",
-  "form.submit": "Submit",
-  "contact.title": "Contact Sales",
-  "contact.subtitle": "Tell us about your needs and we'll get back shortly.",
-  "form.success": "Submitted successfully!",
-  "form.error": "Something went wrong. Please try again."
+  "brand": {
+    "name": "mybasket"
+  },
+  "nav": {
+    "products": "Products",
+    "suppliers": "Suppliers",
+    "contact": "Contact"
+  },
+  "cta": {
+    "browse": "Browse Products",
+    "becomeSupplier": "Become a Supplier"
+  },
+  "hero": {
+    "title": "Your B2B partner for wholesale and retail supply",
+    "subtitle": "Discover curated suppliers and products with transparent MOQ and packaging details."
+  },
+  "how": {
+    "title": "How it works",
+    "step1": "Browse the catalog and shortlist products",
+    "step2": "Send an inquiry for pricing & MOQ",
+    "step3": "We coordinate fulfillment and logistics"
+  },
+  "stats": {
+    "title": "Our numbers",
+    "suppliers": "+ Suppliers",
+    "skus": "+ SKUs",
+    "cities": "+ Cities served"
+  },
+  "testimonials": {
+    "title": "Trusted by partners"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "language": "Language"
+  },
+  "store": {
+    "title": "Catalog",
+    "search": "Search products",
+    "category": "Category",
+    "brand": "Brand",
+    "price": "Price",
+    "reset": "Reset",
+    "loadMore": "Load more"
+  },
+  "product": {
+    "moq": "MOQ",
+    "packaging": "Packaging",
+    "inquire": "Request Pricing"
+  },
+  "suppliers": {
+    "title": "Become a Supplier",
+    "subtitle": "Join our network and reach thousands of retail buyers."
+  },
+  "form": {
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "category": "Category",
+    "message": "Message",
+    "submit": "Submit",
+    "success": "Submitted successfully!",
+    "error": "Something went wrong. Please try again."
+  },
+  "contact": {
+    "title": "Contact Sales",
+    "subtitle": "Tell us about your needs and we'll get back shortly."
+  }
 }

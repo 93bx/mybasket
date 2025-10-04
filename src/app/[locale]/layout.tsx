@@ -1,9 +1,8 @@
 import type {Metadata} from 'next';
 import {Tajawal, Inter} from 'next/font/google';
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, getLocale} from 'next-intl/server';
+import {getMessages} from 'next-intl/server';
 import '../globals.css';
-import {locales} from '@/i18n/routing';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -15,8 +14,10 @@ export const metadata: Metadata = {
 const inter = Inter({subsets: ['latin'], variable: '--font-inter'});
 const tajawal = Tajawal({subsets: ['arabic'], variable: '--font-tajawal', weight: ['400','500','700']});
 
+import {routing} from '@/i18n/routing';
+
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return routing.locales.map((locale) => ({locale}));
 }
 
 export default async function LocaleLayout({
@@ -24,9 +25,9 @@ export default async function LocaleLayout({
   params
 }: {
   children: React.ReactNode;
-  params: {locale: 'en' | 'ar'};
+  params: Promise<{locale: 'en' | 'ar'}>;
 }) {
-  const locale = await getLocale();
+  const {locale} = await params;
   const messages = await getMessages();
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
   return (
