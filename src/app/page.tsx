@@ -1,9 +1,9 @@
 import {redirect} from 'next/navigation';
 import {headers} from 'next/headers';
 
-export default function RootPage() {
+export default async function RootPage() {
   // Get the Accept-Language header to determine user's preferred locale
-  const headersList = headers();
+  const headersList = await headers();
   const acceptLanguage = headersList.get('accept-language') || '';
   
   // Simple locale detection based on Accept-Language header
