@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import {notFound} from 'next/navigation';
-import {useTranslations} from 'next-intl';
+import {getTranslations} from 'next-intl/server';
 
 export default async function ProductPage({params}:{params:Promise<{id:string}>}){
-  const t = useTranslations();
+  const t = await getTranslations();
   const {id} = await params;
   
   const PRODUCTS = Array.from({length: 42}).map((_, i) => ({

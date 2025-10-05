@@ -25,8 +25,8 @@ export default function StorePage(){
   const [page, setPage] = useState(1);
   const pageSize = 12;
 
-  const brands = useMemo(() => Array.from(new Set(PRODUCTS.map(p=>p.brand))), []);
-  const categories = useMemo(() => Array.from(new Set(PRODUCTS.map(p=>p.category))), []);
+  const brands = useMemo(() => Array.from(new Set(PRODUCTS.map(p=>p.brand))), [PRODUCTS]);
+  const categories = useMemo(() => Array.from(new Set(PRODUCTS.map(p=>p.category))), [PRODUCTS]);
 
   const filtered = PRODUCTS.filter(p =>
     (!q || p.name.toLowerCase().includes(q.toLowerCase())) &&
@@ -51,7 +51,7 @@ export default function StorePage(){
           <option value="">{t('store.brand')}</option>
           {brands.map(b=> <option key={b} value={b}>{b}</option>)}
         </select>
-        <input value={maxPrice as any} onChange={e=>{setMaxPrice(e.target.value? Number(e.target.value): ''); setPage(1);}} type="number" placeholder={t('store.price')} className="px-4 py-2 rounded-lg bg-white/70 border border-white/50" />
+        <input value={maxPrice} onChange={e=>{setMaxPrice(e.target.value? Number(e.target.value): ''); setPage(1);}} type="number" placeholder={t('store.price')} className="px-4 py-2 rounded-lg bg-white/70 border border-white/50" />
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

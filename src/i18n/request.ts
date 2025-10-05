@@ -3,7 +3,7 @@ import {routing} from './routing';
 
 export default getRequestConfig(async ({locale}) => {
   // Provide a default locale if not provided
-  if (!locale || !routing.locales.includes(locale as any)) {
+  if (!locale || !routing.locales.includes(locale as (typeof routing.locales)[number])) {
     locale = routing.defaultLocale;
   }
   
