@@ -67,5 +67,29 @@
   "contact": {
     "title": "تواصل مع المبيعات",
     "subtitle": "أخبرنا عن احتياجاتك وسنعاود الاتصال قريبًا."
+  },
+  "footer": {
+    "catalog": "الكتالوج",
+    "suppliers": "الموردون",
+    "contact": "اتصل بنا"
+  },
+  "testimonials": {
+    "quote": "شريك رائع مع لوجستيات سلسة.",
+    "partner": "شريك"
+  },
+  "products": {
+    "product": "منتج",
+    "brands": {
+      "acme": "أكيمي",
+      "globex": "جلوبكس",
+      "umbrella": "أمبريلا"
+    },
+    "categories": {
+      "beverages": "المشروبات",
+      "snacks": "الوجبات الخفيفة",
+      "household": "الأدوات المنزلية"
+    },
+    "packaging": "صندوق",
+    "description": "منتج بالجملة عالي الجودة لتوزيع التجزئة."
   }
 }

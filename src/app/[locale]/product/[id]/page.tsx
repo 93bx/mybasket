@@ -2,19 +2,20 @@ import Image from 'next/image';
 import {notFound} from 'next/navigation';
 import {useTranslations} from 'next-intl';
 
-const PRODUCTS = Array.from({length: 42}).map((_, i) => ({
-  id: (i + 1).toString(),
-  name: `Product ${i + 1}`,
-  brand: ['Acme','Globex','Umbrella'][i % 3],
-  description: 'High quality wholesale product for retail distribution.',
-  moq: 10 + (i % 5) * 5,
-  packaging: 'Box',
-  image: '/vercel.svg'
-}));
-
 export default async function ProductPage({params}:{params:Promise<{id:string}>}){
   const t = useTranslations();
   const {id} = await params;
+  
+  const PRODUCTS = Array.from({length: 42}).map((_, i) => ({
+    id: (i + 1).toString(),
+    name: `${t('products.product')} ${i + 1}`,
+    brand: [t('products.brands.acme'), t('products.brands.globex'), t('products.brands.umbrella')][i % 3],
+    description: t('products.description'),
+    moq: 10 + (i % 5) * 5,
+    packaging: t('products.packaging'),
+    image: '/vercel.svg'
+  }));
+  
   const product = PRODUCTS.find(p=>p.id === id);
   if(!product) return notFound();
   return (

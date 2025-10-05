@@ -28,12 +28,9 @@
     "cities": "+ Cities served"
   },
   "testimonials": {
-    "title": "Trusted by partners"
-  },
-  "footer": {
-    "quickLinks": "Quick Links",
-    "legal": "Legal",
-    "language": "Language"
+    "title": "Trusted by partners",
+    "quote": "Great partner with smooth logistics.",
+    "partner": "Partner"
   },
   "store": {
     "title": "Catalog",
@@ -67,5 +64,25 @@
   "contact": {
     "title": "Contact Sales",
     "subtitle": "Tell us about your needs and we'll get back shortly."
+  },
+  "footer": {
+    "catalog": "Catalog",
+    "suppliers": "Suppliers",
+    "contact": "Contact"
+  },
+  "products": {
+    "product": "Product",
+    "brands": {
+      "acme": "Acme",
+      "globex": "Globex",
+      "umbrella": "Umbrella"
+    },
+    "categories": {
+      "beverages": "Beverages",
+      "snacks": "Snacks",
+      "household": "Household"
+    },
+    "packaging": "Box",
+    "description": "High quality wholesale product for retail distribution."
   }
 }

@@ -3,20 +3,21 @@ import {useState, useMemo} from 'react';
 import Image from 'next/image';
 import {useTranslations, useLocale} from 'next-intl';
 
-const PRODUCTS = Array.from({length: 42}).map((_, i) => ({
-  id: i + 1,
-  name: `Product ${i + 1}`,
-  brand: ['Acme','Globex','Umbrella'][i % 3],
-  category: ['Beverages','Snacks','Household'][i % 3],
-  price: (5 + (i % 10)) * 3,
-  image: '/vercel.svg',
-  moq: 10 + (i % 5) * 5,
-  packaging: 'Box'
-}));
-
 export default function StorePage(){
   const t = useTranslations();
   const locale = useLocale();
+  
+  const PRODUCTS = Array.from({length: 42}).map((_, i) => ({
+    id: i + 1,
+    name: `${t('products.product')} ${i + 1}`,
+    brand: [t('products.brands.acme'), t('products.brands.globex'), t('products.brands.umbrella')][i % 3],
+    category: [t('products.categories.beverages'), t('products.categories.snacks'), t('products.categories.household')][i % 3],
+    price: (5 + (i % 10)) * 3,
+    image: '/vercel.svg',
+    moq: 10 + (i % 5) * 5,
+    packaging: t('products.packaging')
+  }));
+  
   const [q, setQ] = useState('');
   const [brand, setBrand] = useState('');
   const [category, setCategory] = useState('');

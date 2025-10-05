@@ -49,8 +49,8 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           {[1,2,3].map(i => (
             <div key={i} className="p-6 rounded-xl bg-white/60 backdrop-blur border border-white/40 shadow-sm">
-              <p className="italic">“Great partner with smooth logistics.”</p>
-              <div className="mt-3 text-sm opacity-80">— Partner {i}</div>
+              <p className="italic">"{t('testimonials.quote')}"</p>
+              <div className="mt-3 text-sm opacity-80">— {t('testimonials.partner')} {i}</div>
             </div>
           ))}
         </div>
