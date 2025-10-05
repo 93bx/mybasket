@@ -16,7 +16,7 @@ export default function Navbar(){
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-auto container px-4">
         <nav className="mt-4 flex items-center justify-between rounded-2xl bg-white/30 backdrop-blur-xl border border-white/50 shadow-lg px-4 py-3">
-          <Link href={`/${locale}`} className="flex items-center gap-3">
+          <Link href={`/${locale}`} className="flex items-center gap-3 bg-white rounded-lg p-2">
             <Image src="/logo.png" alt="mybasket" width={140} height={32} />
           </Link>
           <div className="flex items-center gap-6 text-sm font-medium">
